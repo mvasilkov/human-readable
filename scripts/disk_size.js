@@ -20,13 +20,18 @@ const units = {
 }
 
 function formatSize(n, { binary, decimalPlaces = 2, keepTrailingZeros } = {}) {
+    let sign = ''
+    if (n < 0) {
+        sign = '−'
+        n = -n
+    }
     for (const [divider, symbol] of binary ? units.binary : units.decimal) {
         if (n >= divider) {
             const ns = toFixed(n / divider, { decimalPlaces, keepTrailingZeros })
-            return `${ns} ${symbol}`
+            return `${sign}${ns} ${symbol}`
         }
     }
-    return `${n} ${n == 1 ? 'byte' : 'bytes'}`
+    return `${sign}${n} ${n == 1 ? 'byte' : 'bytes'}`
 }
 
 module.exports = { formatSize }
