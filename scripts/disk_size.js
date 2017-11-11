@@ -2,7 +2,7 @@
 
 const { toFixed } = require('./helpers')
 
-const units = {
+const prefices = {
     decimal: [
         [1000 ** 5, 'P'],
         [1000 ** 4, 'T'],
@@ -19,19 +19,27 @@ const units = {
     ],
 }
 
-function formatSize(n, { binary, decimalPlaces = 2, keepTrailingZeros } = {}) {
+function formatSizeBase(n, { binary, decimalPlaces = 2, keepTrailingZeros } = {}) {
     let sign = ''
     if (n < 0) {
         sign = '−'
         n = -n
     }
-    for (const [divider, symbol] of binary ? units.binary : units.decimal) {
+    for (const [divider, prefix] of binary ? prefices.binary : prefices.decimal) {
         if (n >= divider) {
-            const ns = toFixed(n / divider, { decimalPlaces, keepTrailingZeros })
-            return `${sign}${ns} ${symbol}B`
+            const repr = toFixed(n / divider, { decimalPlaces, keepTrailingZeros })
+            return [sign, repr, prefix]
         }
     }
-    return `${sign}${n} ${n == 1 ? 'byte' : 'bytes'}`
+    return [sign, '' + n, '']
 }
 
-module.exports = { formatSize }
+function formatSize(n, options = {}) {
+    const [sign, repr, prefix] = formatSizeBase(n, options)
+    if (prefix) {
+        return `${sign}${repr} ${prefix}B`
+    }
+    return `${sign}${repr} ${repr == '1' ? 'byte' : 'bytes'}`
+}
+
+module.exports = { formatSizeBase, formatSize }
