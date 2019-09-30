@@ -1,0 +1,15 @@
+{
+  "name": "human-readable",
+  "version": "0.1.0",
+  "description": "Presenting values in human-readable form.",
+  "main": "javascript/readable.js",
+  "repository": "git@github.com:mvasilkov/human-readable.git",
+  "author": "Mark Vasilkov (https://github.com/mvasilkov)",
+  "license": "MIT",
+  "scripts": {
+    "test": "ava"
+  },
+  "devDependencies": {
+    "ava": "^2.4.0"
+  }
+}
