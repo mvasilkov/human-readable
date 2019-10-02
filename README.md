@@ -12,6 +12,22 @@ Installation
 
     yarn add human-readable
 
+Usage
+---
+
+```javascript
+import { sizeFormatter } from 'human-readable'
+
+const format = sizeFormatter({
+    std: 'JEDEC', // 'SI' (default) | 'IEC' | 'JEDEC'
+    decimalPlaces: 2,
+    keepTrailingZeroes: false,
+    render: (literal, symbol) => `${literal} ${symbol}B`,
+})
+
+format(4096) // 4 KB
+```
+
 Disk size units
 ---
 

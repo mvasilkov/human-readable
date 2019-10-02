@@ -4,6 +4,7 @@
     "module": "commonjs",
     "outDir": "./javascript",
     "rootDir": "./typescript",
+    "declaration": true,
     "strict": true,
     "newLine": "LF",
     "esModuleInterop": true
