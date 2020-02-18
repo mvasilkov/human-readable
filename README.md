@@ -3,14 +3,17 @@ human-readable
 
 Presenting values in human-readable form.
 
-[![npm][npm-image]][npm-url]
+[![npm][npm-badge]][npm-url]
+[![no dependencies][dependencies-badge]][dependencies-url]
 
 ---
 
 Installation
 ---
 
-    yarn add human-readable
+```sh
+npm add human-readable
+```
 
 Usage
 ---
@@ -25,7 +28,11 @@ const format = sizeFormatter({
     render: (literal, symbol) => `${literal} ${symbol}B`,
 })
 
-format(4096) // 4 KB
+format(4096) // '4 KB'
+
+const defaults = sizeFormatter()
+
+defaults(4096) // '4.1 kB'
 ```
 
 Disk size units
@@ -39,8 +46,10 @@ Disk size units
 | (10<sup>3</sup>)<sup>4</sup> | TB | (2<sup>10</sup>)<sup>4</sup> | TiB | TB
 | (10<sup>3</sup>)<sup>5</sup> | PB | (2<sup>10</sup>)<sup>5</sup> | PiB | PB
 
-[npm-image]: https://img.shields.io/npm/v/human-readable.svg?style=flat-square
+[npm-badge]: https://img.shields.io/npm/v/human-readable.svg?style=flat
 [npm-url]: https://www.npmjs.com/package/human-readable
+[dependencies-badge]: https://img.shields.io/david/mvasilkov/human-readable?style=flat
+[dependencies-url]: https://www.npmjs.com/package/human-readable?activeTab=dependencies
 [iec]: http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=112-01-27
 [si]: http://www.electropedia.org/iev/iev.nsf/display?openform&ievref=112-02-03
 [jedec]: https://www.jedec.org/standards-documents/dictionary/terms/kilo-k-prefix-units-semiconductor-storage-capacity

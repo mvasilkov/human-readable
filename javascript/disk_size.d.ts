@@ -8,10 +8,11 @@ export declare const M: number;
 export declare const G: number;
 export declare const T: number;
 export declare const P: number;
+declare type Multiple = [string, number];
 declare const Standards: {
-    SI: [string, number][];
-    IEC: [string, number][];
-    JEDEC: [string, number][];
+    SI: Multiple[];
+    IEC: Multiple[];
+    JEDEC: Multiple[];
 };
 declare type StandardName = keyof typeof Standards;
 declare type RenderFunction<T> = (literal: string, symbol: string) => T;

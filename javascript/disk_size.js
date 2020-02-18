@@ -7,11 +7,11 @@ exports.DEC_G = 1e9;
 exports.DEC_T = 1e12;
 exports.DEC_P = 1e15;
 // 2ⁿ
-exports.K = Math.pow(2, 10);
-exports.M = Math.pow(2, 20);
-exports.G = Math.pow(2, 30);
-exports.T = Math.pow(2, 40);
-exports.P = Math.pow(2, 50);
+exports.K = 2 ** 10;
+exports.M = 2 ** 20;
+exports.G = 2 ** 30;
+exports.T = 2 ** 40;
+exports.P = 2 ** 50;
 const SI = [
     ['P', exports.DEC_P],
     ['T', exports.DEC_T],

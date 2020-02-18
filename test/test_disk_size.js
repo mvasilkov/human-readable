@@ -1,6 +1,10 @@
-import test from 'ava'
+const assert = require('assert').strict
 
-import { sizeFormatter } from '../javascript/disk_size'
+const { sizeFormatter } = require('../javascript/disk_size')
+
+function test(title, fun) {
+    exports[`test ${title}`] = () => fun({ is: assert.strictEqual })
+}
 
 test('disk_size defaults', t => {
     const subj = sizeFormatter()
