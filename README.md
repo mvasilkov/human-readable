@@ -18,6 +18,8 @@ npm add human-readable
 Usage
 ---
 
+### Size formatter
+
 ```javascript
 import { sizeFormatter } from 'human-readable'
 
@@ -33,6 +35,25 @@ format(4096) // '4 KB'
 const defaults = sizeFormatter()
 
 defaults(4096) // '4.1 kB'
+```
+
+### Duration formatter
+
+```javascript
+import { durationFormatter } from 'human-readable'
+
+const span = Date.now() - Date.parse('2019-01-01T09:00:00.000+0200')
+
+const format = durationFormatter({
+    // 'y' | 'mo' | 'w' | 'd' | 'h' | 'm' | 's' | 'ms'
+    allowMultiples: ['y', 'mo', 'd'],
+})
+
+format(span) // '1y 1mo 19d'
+
+const defaults = durationFormatter()
+
+defaults(span) // '1y 1mo 19d 19h 41m 48s'
 ```
 
 Disk size units

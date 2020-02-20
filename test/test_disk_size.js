@@ -1,3 +1,5 @@
+'use strict'
+
 const assert = require('assert').strict
 
 const { sizeFormatter } = require('../javascript/disk_size')
