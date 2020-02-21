@@ -67,6 +67,11 @@ Disk size units
 | (10<sup>3</sup>)<sup>4</sup> | TB | (2<sup>10</sup>)<sup>4</sup> | TiB | TB
 | (10<sup>3</sup>)<sup>5</sup> | PB | (2<sup>10</sup>)<sup>5</sup> | PiB | PB
 
+License
+---
+
+MIT
+
 [npm-badge]: https://img.shields.io/npm/v/human-readable.svg?style=flat
 [npm-url]: https://www.npmjs.com/package/human-readable
 [dependencies-badge]: https://img.shields.io/david/mvasilkov/human-readable?style=flat
