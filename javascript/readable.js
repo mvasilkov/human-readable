@@ -1,6 +1,7 @@
 "use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
 Object.defineProperty(exports, "__esModule", { value: true });
-var disk_size_1 = require("./disk_size");
-exports.sizeFormatter = disk_size_1.sizeFormatter;
-var duration_1 = require("./duration");
-exports.durationFormatter = duration_1.durationFormatter;
+__export(require("./disk_size"));
+__export(require("./duration"));

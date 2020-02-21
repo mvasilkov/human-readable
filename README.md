@@ -47,6 +47,7 @@ const span = Date.now() - Date.parse('2019-01-01T09:00:00.000+0200')
 const format = durationFormatter({
     // 'y' | 'mo' | 'w' | 'd' | 'h' | 'm' | 's' | 'ms'
     allowMultiples: ['y', 'mo', 'd'],
+    keepNonLeadingZeroes: false, // E.g. '1y 0mo 0d'
 })
 
 format(span) // '1y 1mo 19d'
